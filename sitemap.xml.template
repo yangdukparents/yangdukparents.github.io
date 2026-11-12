@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap is generated into the published site by GitHub Actions.
+     Every URL uses the actual GitHub Pages base URL returned by configure-pages,
+     including /repository/ for a project site. The published file is sitemap.xml. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{SITE_BASE_URL}}/</loc></url>
+  <url><loc>{{SITE_BASE_URL}}/garden.html</loc></url>
+  <url><loc>{{SITE_BASE_URL}}/reading.html</loc></url>
+  <url><loc>{{SITE_BASE_URL}}/culture.html</loc></url>
+  <url><loc>{{SITE_BASE_URL}}/explore.html</loc></url>
+</urlset>
