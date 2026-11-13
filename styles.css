@@ -708,3 +708,56 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
  .pamphlet-dialog-figure img {max-height:calc(94dvh - 260px)}
 }
 @media(prefers-reduced-motion:reduce){.pamphlet-trigger{transition:none}}
+
+/* PC home: mascot notebook and pamphlet sticker share the map-side rail.
+   The phone layout (<=820px) and pamphlet viewer are unchanged. */
+@media (min-width:821px) {
+  .desktop-hero-layout {align-items:start}
+  .desktop-side-column {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:clamp(9px,1.25vw,16px);
+    min-width:0;
+  }
+  .desktop-side-column .mascot-note {width:100%;margin:0}
+  .desktop-side-column .pamphlet-cta--desktop {
+    display:block;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+    background:none;
+  }
+  .desktop-side-column .pamphlet-trigger {
+    width:100%;
+    max-width:100%;
+    border-radius:16px;
+  }
+  .desktop-side-column .pamphlet-trigger img {
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
+  .desktop-side-column .pamphlet-cta p {
+    margin:-7px 0 0;
+    font-size:10px;
+    line-height:1.5;
+    color:#747960;
+    letter-spacing:-.15px;
+    word-break:keep-all;
+  }
+}
+@media (min-width:821px) and (max-width:1080px) {
+  .desktop-side-column {gap:8px}
+  .desktop-side-column .mascot-note {padding-top:10px;padding-bottom:10px}
+  .desktop-side-column .mascot-note-kicker {font-size:8px;margin-bottom:5px}
+  .desktop-side-column .mascot-polaroid {width:min(57%,85px);margin-bottom:5px}
+  .desktop-side-column .mascot-note-message h2 {font-size:15px;margin-bottom:4px}
+  .desktop-side-column .mascot-note-message p {font-size:10.5px;line-height:1.55}
+  .desktop-side-column .mascot-note-message .mascot-note-small {font-size:9px;margin-top:5px;line-height:1.45}
+  .desktop-side-column .pamphlet-trigger {max-width:165px}
+  .desktop-side-column .pamphlet-cta p {font-size:9px}
+}
