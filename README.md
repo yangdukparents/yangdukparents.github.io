@@ -60,3 +60,13 @@ README.md
 `README.md`, `robots.txt`, `sitemap.xml.template`은 개발·검색 최적화용으로 포함합니다. 실제 사이트에 게시할 `sitemap.xml`, 각 페이지 canonical 및 `robots.txt`는 GitHub Actions 빌드 과정에서 실제 사이트 주소를 사용해 자동 생성합니다.
 
 **주의:** GitHub에서 Public 저장소를 사용하는 동안 학생 이미지와 콘텐츠가 공개됩니다. 필요한 공개 동의 및 이용 권한을 확인하세요.
+
+
+## 2026-11-13: 추가 활동 사진 9장
+
+- 독서·기초학력·경제프로젝트(reading.html) 챕터 1~3에 사진 3장
+- 문화예술·스포츠·양덕 한마당(culture.html) 챕터 1~3에 사진 3장
+- SW·AI·진로·체험학습(explore.html) 챕터 1~3에 사진 3장
+- 기존 텃밭 페이지(garden.html)의 폴라로이드 카드 스타일 재사용, 문구·배치·배포설정 변경 없음
+- `assets/yangdeok-*.webp`는 SEO 친화적 파일명으로 저장한 사진임
+- 학생이 포함된 이미지 공개 전 이용·초상 권한을 확인할 것
