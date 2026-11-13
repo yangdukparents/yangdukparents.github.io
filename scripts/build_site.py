@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, quote
 from xml.etree import ElementTree as ET
 
-PAGES = ['index.html', 'garden.html', 'reading.html', 'culture.html', 'explore.html']
+PAGES = ['index.html', 'garden.html', 'reading.html', 'culture.html', 'explore.html', 'experience-2026.html', 'school-life-2026.html']
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -41,7 +41,7 @@ def build(base, output):
             raise ValueError(f'{name}: head missing')
         text=text.replace('</head>',f'{tag}\n</head>',1)
         (output/name).write_text(text,encoding='utf-8')
-    # Sitemap protocol: absolute URLs, all 5 pages; use root / as homepage canonical.
+    # Sitemap protocol: absolute URLs, all 7 pages; use root / as homepage canonical.
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
     root=ET.Element('{http://www.sitemaps.org/schemas/sitemap/0.9}urlset')
     for name in PAGES:
@@ -51,7 +51,7 @@ def build(base, output):
     ET.indent(root,space='  ')
     ET.ElementTree(root).write(output/'sitemap.xml',encoding='utf-8',xml_declaration=True)
     (output/'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: '+base+'/sitemap.xml\n',encoding='utf-8')
-    print(f'Prepared 5 pages with canonical and sitemap for {base}/')
+    print(f'Prepared {len(PAGES)} pages with canonical and sitemap for {base}/')
     print('Sitemap:',output/'sitemap.xml')
 
 if __name__=='__main__':

@@ -8,4 +8,6 @@
   <url><loc>{{SITE_BASE_URL}}/reading.html</loc></url>
   <url><loc>{{SITE_BASE_URL}}/culture.html</loc></url>
   <url><loc>{{SITE_BASE_URL}}/explore.html</loc></url>
+  <url><loc>{{SITE_BASE_URL}}/experience-2026.html</loc></url>
+  <url><loc>{{SITE_BASE_URL}}/school-life-2026.html</loc></url>
 </urlset>
