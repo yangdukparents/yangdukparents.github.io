@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-# Sitemap location is added on GitHub Pages deployment.
+
+Sitemap: https://yangdukparents.github.io/sitemap.xml

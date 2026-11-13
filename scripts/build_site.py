@@ -32,14 +32,28 @@ def build(base, output):
     shutil.copy2(ROOT / 'styles.css', output/'styles.css')
     shutil.copy2(ROOT / '.nojekyll', output/'.nojekyll')
     shutil.copytree(ROOT/'assets', output/'assets', dirs_exist_ok=True)
+    # User-provided ownership verification files must be published unchanged.
+    for pattern in ('google*.html', 'naver*.html'):
+        for verification_file in ROOT.glob(pattern):
+            shutil.copy2(verification_file, output/verification_file.name)
     for name in PAGES:
         text=(ROOT/name).read_text(encoding='utf-8')
         canonical=base + ('/' if name=='index.html' else '/'+name)
-        # Canonical is deliberately absent from source HTML because the URL is not final.
-        tag=f'<link rel="canonical" href="{canonical}">'
+        # Source HTML already has a static canonical for branch publishing.
+        # Update instead of inserting another tag when deployed with GitHub Actions.
         if not re.search(r'<head\b',text,re.I) or '</head>' not in text.lower():
             raise ValueError(f'{name}: head missing')
-        text=text.replace('</head>',f'{tag}\n</head>',1)
+        tag=f'<link rel="canonical" href="{canonical}">'
+        pattern=r'<link\s+rel="canonical"\s+href="[^"]*"\s*/?>'
+        if re.search(pattern,text,flags=re.I):
+            text=re.sub(pattern,lambda _:tag,text,count=1,flags=re.I)
+        else:
+            text=text.replace('</head>',f'{tag}\n</head>',1)
+        # Social share URL fields need to reflect project subpaths too.
+        text=re.sub(r'(<meta property="og:url" content=")[^"]*(">)',
+                    lambda m:m.group(1)+canonical+m.group(2), text, count=1)
+        text=re.sub(r'(<meta property="og:image" content=")[^"]*(">)',
+                    lambda m:m.group(1)+base+'/assets/yangdeok-social-preview.jpg'+m.group(2),text,count=1)
         (output/name).write_text(text,encoding='utf-8')
     # Sitemap protocol: absolute URLs, all 7 pages; use root / as homepage canonical.
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')

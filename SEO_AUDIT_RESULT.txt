@@ -1,0 +1,34 @@
+양덕 분교 산책지도 SEO 점검 요약 · 2026-11-13
+
+[직접 확인한 사항]
+- 기존 전체 패키지에 sitemap.xml 완성본이 없었음 (sitemap.xml.template만 존재)
+- 기존 robots.txt에 Sitemap 항목 없음
+- 7개 HTML 원본에 절대 canonical 없음
+- 7개 HTML 원본에 Open Graph 태그 없음
+- 기존 custom Actions가 build_site.py를 실행하도록 정의되어 있음
+- 실제 GitHub Actions 실행 이력은 외부 접근 제한으로 확인하지 못함
+
+[완료한 코드 수정]
+- 배포 설정 변경 없이 7개 절대 canonical / OG / 정적 sitemap.xml / robots.txt 추가
+- 1200x630 JPG 공유 이미지 추가 (원본 수채화 산책지도 보존)
+- build_site.py를 idempotent하게 수정: custom Actions가 실행돼도 canonical 중복 없음
+- custom Actions 빌드에 소유 확인용 google*.html, naver*.html 파일 자동 복사 지원
+- 메인 소개 중복 문장 한 곳 정리, '양덕이예요'를 '양덕이에요'로 교정
+
+[검증 완료]
+- XML sitemap 7 URL 파싱 성공
+- robots Sitemap 및 canonical URL 일치
+- 원본 정적 배포, 사용자 지정 Action root 배포, 프로젝트 경로 배포 테스트 통과
+- 7페이지 H1, OG, 상대 이미지·내부 링크 경로 검사 통과
+- 기존 사진과 이미지 자산 전부 유지
+
+[실제 HTTP/브라우저 검사 제한]
+- 이 실행 환경에서 공개 사이트 HTTP fetch 및 Chromium 접근이 막혀 있음.
+- 따라서 7개 공개 URL의 HTTP 200, 실제 서버 XML 응답, 브라우저 클릭 동작은 미확인.
+- 배포 후 직접 열어 보거나, 인터넷 연결 환경에서 python scripts/check_live_seo.py를 실행해 확인해야 함.
+
+[필요한 사용자 작업]
+- 이번 수정 파일을 GitHub 저장소 최상위에 업로드/Commit
+- Search Console / 네이버 서치어드바이저 발급 토큰으로 소유 확인
+- 두 검색 서비스에서 sitemap.xml 제출
+- GitHub 저장소 About -> Website 주소 등록
