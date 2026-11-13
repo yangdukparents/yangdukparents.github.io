@@ -522,6 +522,7 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
 .chapter-related-link a:hover{background:#e7ebde}
 .school-contact {max-width:1010px;margin:33px auto 0;padding:32px;border:1px solid #e3daca;background:#f8f4e9;border-radius:16px}
 .contact-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:20px 0}
+.contact-options-single{grid-template-columns:1fr;max-width:390px;margin-left:auto;margin-right:auto}
 .contact-options a {display:flex;flex-direction:column;gap:4px;text-decoration:none;background:#fffdf7;border:1px solid #e0d8c8;border-radius:10px;padding:17px 19px;color:#617353}
 .contact-options a span{font-size:12px;color:#837e6e}
 .contact-options a strong{font-size:18px;letter-spacing:.1px}
