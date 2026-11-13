@@ -578,17 +578,17 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
   .guide-polaroid-photo{width:min(52%,180px);margin:8px auto 2px}
 }
 
-/* ─── PC home: storybook B composition, mascot notebook + smaller interactive map ─── */
+/* ─── PC home: compact mascot notebook + expanded interactive map ─── */
 .mascot-note {display:none}
 @media (min-width:821px) {
   .map-frame {max-width:1600px;padding-bottom:10px}
   .desktop-hero-layout {
     display:grid;
-    grid-template-columns:minmax(240px, .355fr) minmax(0, .645fr);
-    gap:clamp(18px, 2.8vw, 42px);
+    grid-template-columns:clamp(200px, 16.5vw, 230px) minmax(0, 1fr);
+    gap:clamp(18px, 2.0vw, 30px);
     align-items:center;
-    max-width:1510px;
-    padding:clamp(22px, 3vw, 45px) clamp(18px, 2.4vw, 38px) 0;
+    max-width:1560px;
+    padding:clamp(18px, 2vw, 30px) clamp(14px, 2vw, 30px) 0;
     margin:0 auto;
   }
   .mascot-note {
@@ -601,35 +601,35 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
     border-left:5px solid #dcc8a7;
     border-radius:7px 20px 13px 5px;
     box-shadow:0 10px 28px rgba(104,84,55,.09),inset 0 0 0 5px rgba(255,255,252,.6);
-    padding:19px clamp(15px,2vw,28px) 23px;
+    padding:15px 12px 17px;
     min-width:0;
     text-align:center;
     transform:rotate(-.35deg);
   }
   .mascot-note::before {
-    content:'';position:absolute;width:83px;height:19px;left:50%;top:-10px;
+    content:'';position:absolute;width:67px;height:16px;left:50%;top:-8px;
     transform:translateX(-50%) rotate(-2deg);
     background:rgba(231,210,162,.66);border:1px solid rgba(214,193,147,.35);
     box-shadow:0 2px 3px rgba(114,89,54,.06);
   }
-  .mascot-note-kicker {display:block;letter-spacing:1.4px;font-size:11px;font-weight:700;color:#8b946c;margin-bottom:10px}
+  .mascot-note-kicker {display:block;letter-spacing:.5px;font-size:10px;font-weight:700;color:#8b946c;margin-bottom:9px}
   .mascot-polaroid {
-    width:min(59%,154px);margin:0 auto 15px;
-    padding:10px 10px 14px;
+    width:min(70%,115px);margin:0 auto 10px;
+    padding:6px 6px 8px;
     background:#fffdf8;
     border:1px solid #e6dfd3;
     box-shadow:3px 7px 15px rgba(96,72,49,.13);
     transform:rotate(2.3deg);
   }
   .mascot-polaroid img {width:100%;height:auto;aspect-ratio:650 / 870;object-fit:contain;filter:sepia(.11) saturate(.8) contrast(.97)}
-  .mascot-polaroid figcaption {font-size:10px;color:#9b896e;padding-top:3px;white-space:nowrap;letter-spacing:.1px}
+  .mascot-polaroid figcaption {font-size:8px;color:#9b896e;padding-top:2px;white-space:nowrap;letter-spacing:0}
   .mascot-note-message h2 {
-    margin:0 0 9px;font-family:'Noto Serif KR','Nanum Myeongjo','Batang',serif;
-    font-size:clamp(19px,1.8vw,25px);font-weight:700;letter-spacing:-.7px;color:#6a4d36;
+    margin:0 0 7px;font-family:'Noto Serif KR','Nanum Myeongjo','Batang',serif;
+    font-size:clamp(16px,1.36vw,19px);font-weight:700;letter-spacing:-.7px;color:#6a4d36;
   }
-  .mascot-note-message p {margin:0;color:#635849;font-size:clamp(13px,1.16vw,16px);line-height:1.95;word-break:keep-all}
+  .mascot-note-message p {margin:0;color:#635849;font-size:clamp(11.5px,.9vw,13px);line-height:1.77;word-break:keep-all}
   .mascot-note-message strong {color:#5c7750}
-  .mascot-note-message .mascot-note-small {margin-top:11px;font-size:12px;color:#8a806a;line-height:1.8}
+  .mascot-note-message .mascot-note-small {margin-top:9px;font-size:10.5px;color:#8a806a;line-height:1.7}
   .desktop-hero-layout .map-scroll {
     min-width:0;
     width:100%;
@@ -644,13 +644,13 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
   .map-hint {display:none}
 }
 @media (min-width:821px) and (max-width:1080px) {
-  .desktop-hero-layout {grid-template-columns:minmax(230px,.35fr) minmax(0,.65fr);gap:17px;padding:18px 18px 0}
-  .mascot-note {padding:18px 13px 21px}
-  .mascot-polaroid {width:min(62%,150px);margin-bottom:13px}
-  .mascot-note-kicker {margin-bottom:8px}
-  .mascot-note-message h2 {font-size:18px;margin-bottom:7px}
-  .mascot-note-message p {font-size:12px;line-height:1.8}
-  .mascot-note-message .mascot-note-small {margin-top:10px;font-size:11px}
+  .desktop-hero-layout {grid-template-columns:200px minmax(0,1fr);gap:16px;padding:16px 16px 0}
+  .mascot-note {padding:14px 11px 16px}
+  .mascot-polaroid {width:min(65%,108px);margin-bottom:9px}
+  .mascot-note-kicker {margin-bottom:7px;font-size:9px}
+  .mascot-note-message h2 {font-size:16px;margin-bottom:6px}
+  .mascot-note-message p {font-size:11.5px;line-height:1.65}
+  .mascot-note-message .mascot-note-small {margin-top:8px;font-size:10px}
 }
 
 
