@@ -89,6 +89,13 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
 .activity-card li {position:relative;padding:0 0 0 17px;margin:0 0 15px;font-size:14px;line-height:1.75;color:#625f54;word-break:keep-all}
 .activity-card li::before {content:'•';position:absolute;left:1px;color:#9fa77b;font-size:16px}
 .activity-card li:last-child {margin-bottom:0}
+.activity-photo {position:relative;margin:0 0 18px;z-index:0}
+.activity-photo img {width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;border-radius:2px;display:block}
+.polaroid-note {background:#fffef9;padding:10px 10px 28px;border:1px solid #e4dbc9;box-shadow:0 8px 22px rgba(92,72,48,.09)}
+.polaroid-note::before {content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-2deg);width:72px;height:22px;border-radius:2px;background:linear-gradient(180deg, rgba(250,233,182,.92), rgba(240,213,151,.74));box-shadow:0 2px 3px rgba(115,95,60,.12);opacity:.95}
+.polaroid-note::after {content:'';position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:44px;height:2px;border-radius:999px;background:#efe6d7;opacity:.85}
+.rotate-left {transform:rotate(-1.4deg)}
+.rotate-right {transform:rotate(1.2deg)}
 .other-stories {margin-top:59px;padding:27px 0 0;border-top:1px solid var(--line)}
 .other-stories h2 {font-size:17px;letter-spacing:-.3px;margin:0 0 15px}
 .other-links {display:flex;flex-wrap:wrap;gap:10px}
@@ -140,6 +147,10 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
  .activity-card{min-height:auto;padding:22px 23px 24px}
  .activity-card h3{font-size:18px;margin:8px 0 16px;padding-bottom:12px}
  .activity-card li{font-size:13.5px;margin-bottom:10px}
+ .activity-photo{margin-bottom:14px}
+ .polaroid-note{padding:8px 8px 24px}
+ .polaroid-note::before{width:62px;height:18px;top:-7px}
+ .polaroid-note::after{bottom:7px;width:38px;height:2px}
 }
 @media(max-width:385px){.story-grid{grid-template-columns:1fr}.story-photo{height:150px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0s!important;animation-duration:0s!important}}
