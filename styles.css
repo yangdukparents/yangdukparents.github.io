@@ -427,3 +427,12 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
   .detail-hero {grid-template-columns:minmax(0,1fr);gap:17px;}
   .detail-hero .hero-picture {width:min(67%,220px);max-width:220px;justify-self:center;margin:5px auto 0;}
 }
+
+/* Link back to the illustrated map follows the third chapter, on all detail pages. */
+.detail-bottom-return {display:flex;justify-content:center;margin:27px auto 0;}
+.detail-bottom-return .return-link {margin-top:0;}
+.detail-bottom-return + .other-stories {margin-top:37px;}
+@media(max-width:820px){
+ .detail-bottom-return{margin-top:18px;}
+ .detail-bottom-return + .other-stories{margin-top:29px;}
+}
