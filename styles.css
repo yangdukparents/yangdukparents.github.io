@@ -652,3 +652,23 @@ a:focus-visible,button:focus-visible,.map-scroll:focus-visible {outline:3px soli
   .mascot-note-message p {font-size:12px;line-height:1.8}
   .mascot-note-message .mascot-note-small {margin-top:10px;font-size:11px}
 }
+
+
+/* Watercolor paper blend: mobile menu artwork only.
+   The originals are unchanged. Feather the paper-colored edges rather than
+   cropping the illustrations or replacing their hand-painted texture. */
+@media (max-width: 820px) {
+  .mobile-action,
+  .mobile-special-card {
+    background: linear-gradient(145deg, #fff3de 0%, #fdf0da 100%);
+  }
+  .mobile-action img,
+  .mobile-special-card img {
+    -webkit-mask-image: radial-gradient(ellipse 63% 67% at 50% 50%,
+      #000 45%, rgba(0,0,0,.98) 56%, rgba(0,0,0,.58) 79%, transparent 100%);
+    mask-image: radial-gradient(ellipse 63% 67% at 50% 50%,
+      #000 45%, rgba(0,0,0,.98) 56%, rgba(0,0,0,.58) 79%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
